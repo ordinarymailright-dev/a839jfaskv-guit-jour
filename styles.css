@@ -1,6 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+    background-color: #f8efdb;
+    color: #2c1f18;
+    font-family: "Inter", sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
 .hero-text {
   position: absolute;
-  top: 50%;
+  top: 40vh;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -13,41 +25,221 @@
 
 .hero-text h1 {
   margin: 0 0 10px 0;
-  font-size: 2.8rem;
+  font-size: 3rem;
+  font-weight: 700;
   font-family: "Playfair Display", serif;
 }
 
-.hero {
-    position: relative;
-    height: 70vh; 
-    width: 100%;
-    overflow: hidden;
-    border-radius: 20px;
+.hero { 
+  position: relative;
+  height: auto; 
+  width: 100%;
+  overflow: hidden;
 }
 
 .hero img {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 90vh;
     object-fit: cover;
     top: 0;
     left: 0;
     filter: brightness(0.6); /* slightly darken so text pops */
 }
 
-body {
-    background-color: #f8efdb;
-    color: #2c1f18;
-    font-family: "Inter", sans-serif;
-}
-
 .top-nav {
-    background-color: #6e4f3a;
+    background-color: #bea08c;
+    position: fixed;
+    top: 0px;
+    z-index: 1001;
+    width: 100%;
+    opacity: 0.8;
+    transition: transform 0.3s ease;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+
 }
 
 .top-nav img {
     width: 40px;
-    margin-top: 8px;
-    margin-left: 0px;
-    margin-bottom: 7px;
+    margin-top: 7px;
+    margin-left: 13px;
+    margin-bottom: 8px;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.hamburger {
+  position: fixed;
+  top: 11px;
+  right: 15px;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+  z-index: 1002; /* sits on top */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger span {
+  display: block;
+  height: 4px;
+  background: #1f1a16;
+  border-radius: 2px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 250px;
+  height: 100vh;
+  background: #fff7e9;
+  box-shadow: -4px 0 12px rgba(0,0,0,0.15);
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar a {
+  color: #1f1a16;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.nav-toggle:checked ~ .sidebar {
+  right: 0;
+}
+
+a {
+    text-decoration-color: transparent !important;
+    text-align: center;
+    color: #2c1f18;
+}
+
+a h2 {
+    padding-top: 5px;
+    width: 270px;
+    font-size: 2rem;
+    display: block;
+}
+
+.year.cards {
+  display: flex;
+  align-items: center;
+}
+
+.year-card-title-bg {
+  position: relative;
+  margin-top: 80px;
+  margin-left: 170px;
+  margin-right: 0px;
+  width: 270px;
+  height: 200px;
+  background-color: #bea08c;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  transition: opacity 0.3s;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.year-card-title-bg:hover {
+    opacity: 0.75;
+}
+
+.year-cards p {
+    flex: 1;
+    margin-left: 5px;
+    position: absolute;
+    top: 0px;
+}
+
+.year-card-desc-bg {
+  position: absolute;
+  margin-left: 0px;
+  margin-right: auto;
+  top: 110.1%;
+  left: 440px;
+  width: 270px;
+  height: 200px;
+  background-color: #c2a878;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.divider {
+  width: 67%;
+  height: 3px;
+  background-color: #d4b06d;
+  margin: 30px auto 60px auto;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110px;
+  background: linear-gradient(to bottom, black, transparent);
+}
+
+footer {
+  backdrop-filter: brightness(0.75);
+  line-height: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/*page two*/
+.video-list {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.video-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.video-title {
+  font-size: 1rem;
+  color: #3a2d2d;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.video-title:hover {
+  opacity: 0.6;
+}
+
+.video-date {
+  font-size: 0.9rem;
+  color: #6d6256;
+}
+
+.video-title:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+.month-label {
+  margin-top: 40px;
+  color: #5a5149;
+  font-size: 1.1rem;
+  opacity: 0.8;
 }
