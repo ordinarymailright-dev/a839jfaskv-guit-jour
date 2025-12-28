@@ -183,17 +183,6 @@ a {
   padding: 1.3rem;
 }
 
-@media (max-width: 578px) {
-  .card-grid {
-    grid-template-columns: 1fr;
-    margin: auto;
-    justify-content: center;
-  }
-  .sidebar {
-    width: 150px;
-  }
-}
-
 .card-grid-wrapper {
   max-width: 1000px;
   margin: 0 auto;
@@ -650,4 +639,22 @@ footer a:hover {
 .timeline-card a:hover {
   color: #ad966c;
   font-weight: 800;
+}
+
+@media (max-width: 578px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+    margin: auto;
+    justify-content: center;
+  }
+  .sidebar {
+    width: 150px;
+  }
+  .timeline-card {
+    flex-direction: column;
+    align-items: center;
+  }
+  .timeline-item::before, .timeline::before {
+    background: transparent;
+  }
 }
