@@ -130,7 +130,7 @@ body {
   top: 0;
   right: -400px;
   width: 250px;
-  height: 100vh;
+  height: 120vh;
   background: #fff7e9;
   box-shadow: -4px 0 12px rgba(0,0,0,0.15);
   padding: 60px 20px;
@@ -181,6 +181,17 @@ a {
   border-radius: 25px;
   background: rgba(0,0,0,0.03);
   padding: 1.3rem;
+}
+
+@media (max-width: 578px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+    margin: auto;
+    justify-content: center;
+  }
+  .sidebar {
+    width: 150px;
+  }
 }
 
 .card-grid-wrapper {
@@ -612,6 +623,7 @@ footer a:hover {
 .timeline img {
   width: 100%;
   max-width: 250px;
+  max-height: 400px;
   height: auto;
   border-radius: 6px;
   flex-shrink: 0;
