@@ -462,7 +462,6 @@ footer a:hover {
   transform: translateY(-4px);
 }
 
-/*Other useful material page*/
 .other-title .year-title {
   margin-top: 90px;
   font-size: 2.2rem;
@@ -641,20 +640,114 @@ footer a:hover {
   font-weight: 800;
 }
 
+/*Other useful material page*/
+.other-title {
+  text-align: center;
+  max-width: 500px;
+  margin: 110px auto 70px auto;
+  font-size: 2rem;
+  font-weight: 700;
+  background-color: #f7ebd1;
+  width: 70%;
+  padding: 13px;
+  border-radius: 15px;
+  box-shadow:
+    inset 0 0 8px rgba(255,255,255,0.4),
+    0 3px 6px rgba(0,0,0,0.09);
+}
+
+.composer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 0 auto;
+  padding-bottom: 80px;
+  justify-items: center;
+}
+
+.composers {
+  margin-left: 40px;
+}
+
+.composers h2 {
+  text-align: left;
+  margin-top: 110px;
+  font-size: 1.5rem;
+  font-family: "Playfair Display", serif;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  margin-left: 30px;
+  margin-bottom: 40px;
+}
+
+.composer-card {
+  background-color: #f2eadc;
+  display: inline-block;
+  border-radius: 15px;
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 25px;
+  box-shadow:
+    0 6px 18px rgba(0,0,0,0.08),
+    inset 0 0 0 1px rgba(0,0,0,0.04);
+  transition: all 0.25s ease;
+}
+
+.composer-card:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.12),
+    inset 0 0 0 1px rgba(0,0,0,0.06);
+}
+
+/*Phone optimization*/
 @media (max-width: 578px) {
   .card-grid {
     grid-template-columns: 1fr;
     margin: auto;
     justify-content: center;
   }
+  .year-item {
+    margin: auto;
+  }
+  .card-grid .year-item:nth-child(odd) {
+  transform: rotate(-0.5deg);
+  }
+  .card-grid .year-item:nth-child(even) {
+    transform: rotate(0.5deg);
+  }
+
   .sidebar {
     width: 150px;
+    gap: 13px;
   }
+  .sidebar a {
+    font-size: 1rem;
+  } 
+
   .timeline-card {
     flex-direction: column;
     align-items: center;
   }
   .timeline-item::before, .timeline::before {
     background: transparent;
+  }
+  .timeline-date {
+    margin: auto;
+    text-align: center;
+  }
+  .timeline-card p {
+    font-size: 1rem;
+  }
+
+  .sagreras-anotated, .sagreras-link {
+    width: 90%;
+  }
+  .sagreras-img {
+    width: 70%;
+  }
+
+  .year-title {
+    font-size: 1.3rem;
   }
 }
